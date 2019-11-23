@@ -4,12 +4,13 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import LogInComponent from './components/login/login';
+import SignInComponent from './components/signin/userForm';
 
 class App extends React.Component {
     render() {
       return (
         <div>
-          <LogInComponent />
+          <SignInComponent />
         </div>
       );
     }
