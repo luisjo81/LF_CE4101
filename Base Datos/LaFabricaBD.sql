@@ -3,30 +3,30 @@ USE LaFabricaDB,
 
 
 CREATE TABLE Paises (
-Nombre VARCHAR (20) primary key,
+Nombre VARCHAR (20) PRIMARY KEY,
 ID VARCHAR (20)
 )
 
 CREATE TABLE Regiones(
-Nombre VARCHAR (20) primary key,
+Nombre VARCHAR (20) PRIMARY KEY,
 Pais VARCHAR (20),
 
 )
 
 CREATE TABLE Universidades (
-Nombre VARCHAR (20) primary key,
+Nombre VARCHAR (20) PRIMARY KEY,
 ID VARCHAR  (20),
 Pais VARCHAR (20),
 
 )
 
 CREATE TABLE Deportes (
-Nombre  VARCHAR (20) primary key,
+Nombre  VARCHAR (20) PRIMARY KEY,
 ID VARCHAR (20)
 )
 
 CREATE TABLE Posiciones (
-Nombre VARCHAR (20) primary key,
+Nombre VARCHAR (20) PRIMARY KEY,
 ID VARCHAR (20)
 )
 
@@ -40,13 +40,13 @@ FechaNacimiento DATETIME,
 FechaIngreso DATETIME,
 Pais VARCHAR (20),
 Region VARCHAR (20),
-Carnet VARCHAR (20) primary key,
+Carnet VARCHAR (20) PRIMARY KEY,
 Universidad VARCHAR (20),
 Deporte VARCHAR (20),
 PosicionP VARCHAR (20),
 PosicionS VARCHAR (20),
 Telefono VARCHAR (10),
-Clave VARCHAR (8),
+[Password] VARCHAR (8),
 
 
 )
@@ -55,10 +55,10 @@ CREATE TABLE Entrenador(
 Nombre VARCHAR (30),
 Apellido1 VARCHAR (30),
 Apellido2 VARCHAR (30),
-Email VARCHAR (50) primary key,
+Email VARCHAR (50) PRIMARY KEY,
 FechaIngreso DATETIME,
-Estado VARCHAR (1),
-Clave VARCHAR (8),
+Estado INT,
+[Password] VARCHAR (8),
 Pais VARCHAR (20),
 Universidad VARCHAR (20),
 
@@ -68,23 +68,23 @@ CREATE TABLE Scout (
 Nombre VARCHAR (30),
 Apellido1 VARCHAR (30),
 Apellido2 VARCHAR (30),
-Email1 VARCHAR (50) primary key,
+Email1 VARCHAR (50) PRIMARY KEY,
 FechaIngreso DATETIME,
-Clave VARCHAR (8),
-Estado VARCHAR (20)
+[Password] VARCHAR (8),
+Estado INT
 )
 
 CREATE TABLE Administrador ( 
 Nombre VARCHAR (20),
 Apellido1 VARCHAR (20),
 Apellido2 VARCHAR (20),
-Email1 VARCHAR (20) primary key,
-Estado VARCHAR (20),
-Clave VARCHAR (20)
+Email1 VARCHAR (20) PRIMARY KEY,
+Estado INT,
+[Password] VARCHAR (20)
 )
 
 CREATE TABLE Estado(
-ID (20) primary key,
+ID VARCHAR (20) PRIMARY KEY,
 Nombre VARCHAR (20)
 )
 
@@ -106,10 +106,10 @@ CREATE TABLE EstadisticasEntrenamientoAtleta (
 Carne VARCHAR (20) primary key,
 NumEntrenamientos INT,
 PromedioEntrenamientos INT,
-PromTDistanciaCorta VARCHAR (20),
-PromTDistanciaLarga VARCHAR (20),
-MejorTiempoDistanciaLarga INT,
-MejorTiempoDistanciaCorta INT,
+PromTDistanciaCorta TIME,
+PromTDistanciaLarga TIME,
+MejorTiempoDistanciaLarga TIME,
+MejorTiempoDistanciaCorta TIME,
 PromedioSalto INT,
 MejorSalto INT,
 PruebaPace TIME,
