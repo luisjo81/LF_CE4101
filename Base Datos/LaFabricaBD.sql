@@ -1,33 +1,33 @@
-create database LaFabricaDB,
-use LaFabricaDB,
+CREATE DATABASE LaFabricaDB,
+USE LaFabricaDB,
 
 
 CREATE TABLE Paises (
-Nombre varchar (20) primary key,
-ID varchar (20)
+Nombre VARCHAR (20) primary key,
+ID VARCHAR (20)
 )
 
 CREATE TABLE Regiones(
-Nombre varchar (20) primary key,
-Pais varchar (20),
-foreign key (Pais) references Paises (Nombre)
+Nombre VARCHAR (20) primary key,
+Pais VARCHAR (20),
+
 )
 
 CREATE TABLE Universidades (
-Nombre varchar (20) primary key,
-ID varchar (20),
-Pais varchar (20),
-foreign key (ID) references Paises (Nombre)
+Nombre VARCHAR (20) primary key,
+ID VARCHAR  (20),
+Pais VARCHAR (20),
+
 )
 
 CREATE TABLE Deportes (
-Nombre  varchar (20) primary key,
-ID varchar (20)
+Nombre  VARCHAR (20) primary key,
+ID VARCHAR (20)
 )
 
 CREATE TABLE Posiciones (
-Nombre varchar (20) primary key,
-ID varchar (20)
+Nombre VARCHAR (20) primary key,
+ID VARCHAR (20)
 )
 
 CREATE TABLE Atleta(
@@ -48,12 +48,7 @@ PosicionS VARCHAR (20),
 Telefono VARCHAR (10),
 Clave VARCHAR (8),
 
-foreign key (Pais) references Paises (Nombre),
-foreign key (Region) references Regiones (Nombre),
-foreign key (Universidad) references Universidades (Nombre),
-foreign key (Deporte) references Deportes (Nombre),
-foreign key (PosicionP) references Posiciones (Nombre),
-foreign key (PosicionS) references Posiciones (Nombre),
+
 )
 
 CREATE TABLE Entrenador(
@@ -66,15 +61,14 @@ Estado VARCHAR (1),
 Clave VARCHAR (8),
 Pais VARCHAR (20),
 Universidad VARCHAR (20),
-foreign key (Pais) references Paises (Nombre),
-foreign key (Universidad) references Universidades (Nombre),
+
 )
 
 CREATE TABLE Info_Scout (
 Nombre VARCHAR (30),
 Apellido1 VARCHAR (30),
 Apellido2 VARCHAR (30),
-Email VARCHAR (50) primary key,
+Email1 VARCHAR (50) primary key,
 FechaIngreso DATETIME,
 Clave VARCHAR (8),
 Estado VARCHAR (20)
@@ -84,67 +78,84 @@ CREATE TABLE Administrador (
 Nombre VARCHAR (20),
 Apellido1 VARCHAR (20),
 Apellido2 VARCHAR (20),
-Email VARCHAR (20) primary key,
+Email1 VARCHAR (20) primary key,
 Estado VARCHAR (20),
 Clave VARCHAR (20)
 )
 
 CREATE TABLE Estado(
 ID (20) primary key,
-Nombre varchar (20)
+Nombre VARCHAR (20)
 )
 
 CREATE TABLE Lesiones(
-ID int primary key,
-Carne varchar (20),
-Lesion varchar (300),
-Descripcion varchar (20),
-foreign key (ID) references Atleta (Carne)
+ID INT primary key,
+Carne VARCHAR (20),
+Lesion VARCHAR (300),
+Descripcion VARCHAR (20),
+
 )
 CREATE TABLE Equipo(
-ID int,
-Entrenador varchar(20),
-foreign key (Entrenador) references Entrenador (Email)
+ID INT,
+Entrenador VARCHAR (20),
+
 )
 
 CREATE TABLE EstadisticasEntrenamientoAtleta (
 
-Carne varchar(20) primary key,
-NumEntrenamientos varchar(20),
-PromedioEntrenamientos varchar(20),
-PromTDistanciaCorta varchar(20),
-PromTDistanciaLarga varchar(20),
-MejorTiempoDistanciaLarga varchar(20),
-MejorTiempoDistanciaCorta varchar(20),
-PromedioSalto varchar(20),
-MejorSalto varchar(20),
-PruebaPace varchar(20),
-PruebaHR varchar(20),
-NotaXSport int
+Carne VARCHAR (20) primary key,
+NumEntrenamientos VARCHAR (20),
+PromedioEntrenamientos VARCHAR char(20),
+PromTDistanciaCorta VARCHAR (20),
+PromTDistanciaLarga VARCHAR (20),
+MejorTiempoDistanciaLarga VARCHAR (20),
+MejorTiempoDistanciaCorta VARCHAR (20),
+PromedioSalto VARCHAR (20),
+MejorSalto VARCHAR (20),
+PruebaPace VARCHAR (20),
+PruebaHR VARCHAR (20),
+NotaXSport INT
 )
 
 CREATE TABLE EstadisticasPartidoAtleta(
-Carne varchar(20),
-NumPartidos varchar (20),
-PromedioCalifPartidos varchar(20),
-TotalJuegos varchar(20),
-TotalJuegosGanados varchar(20),
-TotalJuegosPerdidos varchar(20),
-TotalJuegosEmpatados varchar(20),
-TotalGoles varchar(20),
-Total_asistencias varchar(20),
-TotalBalonesRecuperados varchar(20),
-BalonesRecupPorPartido varchar(20),
-TotalPases varchar(20),
-porcenta_pases_exitosos varchar(20),
-TotalCentros varchar(20),
-PorcentCentrosExitosos varchar(20),
-TarjetasAmarillas varchar(20),
-TarjetasRojas varchar(20),
-PenalesDetenidos varchar(20),
-PenalesSalvados varchar(20),
-PorcentRematesSalvados varchar(20),
-
-foreign key (Carne) references EstadisticasEntrenamientoAtleta (Carne)
+Carne VARCHAR (20),
+NumPartidos VARCHAR (20),
+PromedioCalifPartidos VARCHAR (20),
+TotalJuegos VARCHAR (20),
+TotalJuegosGanados VARCHAR (20),
+TotalJuegosPerdidos VARCHAR (20),
+TotalJuegosEmpatados VARCHAR (20),
+TotalGoles VARCHAR (20),
+Total_asistencias VARCHAR (20),
+TotalBalonesRecuperados VARCHAR (20),
+BalonesRecupPorPartido VARCHAR (20),
+TotalPases VARCHAR (20),
+PorcentPasesExitosos VARCHAR (20),
+TotalCentros VARCHAR (20),
+PorcentCentrosExitosos VARCHAR (20),
+TarjetasAmarillas VARCHAR (20),
+TarjetasRojas VARCHAR (20),
+PenalesDetenidos VARCHAR (20),
+PenalesSalvados VARCHAR (20),
+PorcentRematesSalvados VARCHAR (20),
 )
 
+CREATE TABLE TiposDeUsuario (
+ID Varchar (20) PRIMARY KEY,
+Tipo VARCHAR (20),
+);
+
+ALTER TABLE Regiones ADD FOREIGN KEY (Pais) REFERENCES Paises (Nombre),
+ALTER TABLE Universidades ADD FOREIGN KEY (ID) REFERENCES Paises (Nombre),
+ALTER TABLE Atleta ADD FOREIGN KEY (Pais) REFERENCES Paises (Nombre),
+ALTER TABLE Atleta ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID),
+ALTER TABLE Scout ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID),
+ALTER TABLE Entrenador ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID),
+ALTER TABLE Atleta ADD FOREIGN KEY (Region) REFERENCES Regiones (Nombre),
+ALTER TABLE Atleta ADD FOREIGN KEY (PosicionP) REFERENCES Posiciones (Nombre),
+ALTER TABLE Atleta ADD FOREIGN KEY (PosicionS)  REFERENCES Posiciones(Nombre),
+ALTER TABLE Atleta ADD FOREIGN KEY (Deporte) REFERENCES Deportes (Nombre),
+ALTER TABLE Atleta ADD FOREIGN KEY  (Universidad) REFERENCES Universidades(Nombre),
+ALTER TABLE Lesiones ADD FOREIGN KEY (ID) REFERENCES Atleta (Carne),
+ALTER TABLE Equipo ADD FOREIGN KEY (Entrenador) REFERENCES Entrenador (Email1),
+ALTER TABLE EstadisticasPartidoAtletas ADD FOREIGN KEY (Carne)  REFERENCES EstadisticasEntrenamientoAtleta (Carne)
