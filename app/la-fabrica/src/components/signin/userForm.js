@@ -77,7 +77,7 @@ export class UserForm extends Component {
                 city = {city}
             />);
         if(step === 2)
-            return (<AccountInfo 
+            return (<SportInfo 
                 nextStep = {this.nextStep} 
                 prevStep = {this.prevStep}
                 handleChange = {this.handleChange} 
@@ -88,7 +88,7 @@ export class UserForm extends Component {
                 position2 = {position2}
             />);
         if(step === 3)
-            return (<SportInfo 
+            return (<AccountInfo 
                 nextStep = {this.nextStep} 
                 prevStep = {this.prevStep}
                 handleChange = {this.handleChange} 
