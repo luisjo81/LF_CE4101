@@ -64,7 +64,7 @@ Universidad VARCHAR (20),
 
 )
 
-CREATE TABLE Info_Scout (
+CREATE TABLE Scout (
 Nombre VARCHAR (30),
 Apellido1 VARCHAR (30),
 Apellido2 VARCHAR (30),
@@ -105,15 +105,15 @@ CREATE TABLE EstadisticasEntrenamientoAtleta (
 
 Carne VARCHAR (20) primary key,
 NumEntrenamientos INT,
-PromedioEntrenamientos VARCHAR char(20),
+PromedioEntrenamientos INT,
 PromTDistanciaCorta VARCHAR (20),
 PromTDistanciaLarga VARCHAR (20),
-MejorTiempoDistanciaLarga VARCHAR (20),
-MejorTiempoDistanciaCorta VARCHAR (20),
-PromedioSalto VARCHAR (20),
-MejorSalto VARCHAR (20),
-PruebaPace VARCHAR (20),
-PruebaHR VARCHAR (20),
+MejorTiempoDistanciaLarga INT,
+MejorTiempoDistanciaCorta INT,
+PromedioSalto INT,
+MejorSalto INT,
+PruebaPace TIME,
+PruebaHR TIME,
 NotaXSport INT
 )
 
@@ -125,9 +125,8 @@ TotalJuegos INT,
 TotalJuegosGanados INT,
 TotalJuegosPerdidos INT,
 TotalJuegosEmpatados INT,
-TotalGoles V
-INT,
-Total_asistencias INT,
+TotalGoles INT,
+TotalAsistencias INT,
 TotalBalonesRecuperados INT,
 BalonesRecupPorPartido INT,
 TotalPases INT,
