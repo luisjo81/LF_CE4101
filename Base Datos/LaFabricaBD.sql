@@ -1,4 +1,4 @@
-CREATE DATABASE LaFabricaDB,
+CREATE DATABASE LaFabricaDB;
 USE LaFabricaDB,
 
 
@@ -145,17 +145,17 @@ ID Varchar (20) PRIMARY KEY,
 Tipo VARCHAR (20),
 );
 
-ALTER TABLE Regiones ADD FOREIGN KEY (Pais) REFERENCES Paises (Nombre),
-ALTER TABLE Universidades ADD FOREIGN KEY (ID) REFERENCES Paises (Nombre),
-ALTER TABLE Atleta ADD FOREIGN KEY (Pais) REFERENCES Paises (Nombre),
-ALTER TABLE Atleta ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID),
-ALTER TABLE Scout ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID),
-ALTER TABLE Entrenador ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID),
-ALTER TABLE Atleta ADD FOREIGN KEY (Region) REFERENCES Regiones (Nombre),
-ALTER TABLE Atleta ADD FOREIGN KEY (PosicionP) REFERENCES Posiciones (Nombre),
-ALTER TABLE Atleta ADD FOREIGN KEY (PosicionS)  REFERENCES Posiciones(Nombre),
-ALTER TABLE Atleta ADD FOREIGN KEY (Deporte) REFERENCES Deportes (Nombre),
-ALTER TABLE Atleta ADD FOREIGN KEY  (Universidad) REFERENCES Universidades(Nombre),
+ALTER TABLE Regiones ADD FOREIGN KEY (Pais) REFERENCES Paises (Nombre);
+ALTER TABLE Universidades ADD FOREIGN KEY (ID) REFERENCES Paises (Nombre);
+ALTER TABLE Atleta ADD FOREIGN KEY (Pais) REFERENCES Paises (Nombre);
+ALTER TABLE Atleta ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID);
+ALTER TABLE Scout ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID);
+ALTER TABLE Entrenador ADD FOREIGN KEY (TipoUsuario) REFERENCES TiposDeUsuario (ID);
+ALTER TABLE Atleta ADD FOREIGN KEY (Region) REFERENCES Regiones (Nombre);
+ALTER TABLE Atleta ADD FOREIGN KEY (PosicionP) REFERENCES Posiciones (Nombre);
+ALTER TABLE Atleta ADD FOREIGN KEY (PosicionS)  REFERENCES Posiciones(Nombre);
+ALTER TABLE Atleta ADD FOREIGN KEY (Deporte) REFERENCES Deportes (Nombre);
+ALTER TABLE Atleta ADD FOREIGN KEY  (Universidad) REFERENCES Universidades(Nombre);
 ALTER TABLE Lesiones ADD FOREIGN KEY (ID) REFERENCES Atleta (Carne),
-ALTER TABLE Equipo ADD FOREIGN KEY (Entrenador) REFERENCES Entrenador (Email1),
-ALTER TABLE EstadisticasPartidoAtletas ADD FOREIGN KEY (Carne)  REFERENCES EstadisticasEntrenamientoAtleta (Carne)
+ALTER TABLE Equipo ADD FOREIGN KEY (Entrenador) REFERENCES Entrenador (Email1);
+ALTER TABLE EstadisticasPartidoAtletas ADD FOREIGN KEY (Carne)  REFERENCES EstadisticasEntrenamientoAtleta (Carne);
