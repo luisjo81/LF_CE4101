@@ -1,5 +1,5 @@
 CREATE DATABASE LaFabricaDB;
-USE LaFabricaDB,
+USE LaFabricaDB
 
 
 CREATE TABLE Paises (
@@ -31,37 +31,37 @@ ID VARCHAR (20)
 )
 
 CREATE TABLE Atleta(
-Nombre VARCHAR (30),
-Apellido1 VARCHAR (30),
-Apellido2 VARCHAR (30),
-Email1 VARCHAR (30),
+Nombre VARCHAR (30) NOT NULL,
+Apellido1 VARCHAR (30) NOT NULL,
+Apellido2 VARCHAR (30)NOT NULL,
+Email1 VARCHAR (30) NOT NULL,
 Email2 VARCHAR (30),
-FechaNacimiento DATETIME,
-FechaIngreso DATETIME,
-Pais VARCHAR (20),
-Region VARCHAR (20),
-Carnet VARCHAR (20) PRIMARY KEY,
-Universidad VARCHAR (20),
-Deporte VARCHAR (20),
-PosicionP VARCHAR (20),
+FechaNacimiento DATETIME NOT NULL,
+FechaIngreso DATETIME  NOT NULL,
+Pais VARCHAR (20)  NOT NULL,
+Region VARCHAR (20) NOT NULL,
+Carnet VARCHAR (20) NOT NULL,
+Universidad VARCHAR (20) NOT NULL,
+Deporte VARCHAR (20) NOT NULL,
+PosicionP VARCHAR (20) NOT NULL,
 PosicionS VARCHAR (20),
 Telefono VARCHAR (10),
-[Password] VARCHAR (8),
-
+[Password] VARCHAR (8) NOT NULL,
+PRIMARY KEY (Carnet)
 
 )
 
 CREATE TABLE Entrenador(
-Nombre VARCHAR (30),
-Apellido1 VARCHAR (30),
-Apellido2 VARCHAR (30),
-Email VARCHAR (50) PRIMARY KEY,
-FechaIngreso DATETIME,
-Estado INT,
-[Password] VARCHAR (8),
-Pais VARCHAR (20),
-Universidad VARCHAR (20),
-
+Nombre VARCHAR (30) NOT NULL,
+Apellido1 VARCHAR (30) NOT NULL,
+Apellido2 VARCHAR (30) NOT NULL,
+Email1 VARCHAR (50) NOT NULL,
+FechaIngreso DATETIME NOT NULL,
+Estado INT NOT NULL,
+[Password] VARCHAR (8) NOT NULL,
+Pais VARCHAR (20) NOT NULL,
+Universidad VARCHAR (20) NOT NULL,
+PRIMARY KEY (Email1)
 )
 
 CREATE TABLE Scout (
@@ -104,40 +104,40 @@ Entrenador VARCHAR (20),
 CREATE TABLE EstadisticasEntrenamientoAtleta (
 
 Carne VARCHAR (20) primary key,
-NumEntrenamientos INT,
-PromedioEntrenamientos INT,
-PromTDistanciaCorta TIME,
-PromTDistanciaLarga TIME,
-MejorTiempoDistanciaLarga TIME,
-MejorTiempoDistanciaCorta TIME,
-PromedioSalto INT,
-MejorSalto INT,
-PruebaPace TIME,
-PruebaHR TIME,
-NotaXSport INT
+NumEntrenamientos INT NOT NULL,
+PromedioEntrenamientos INT NOT NULL,
+PromTDistanciaCorta TIME NOT NULL,
+PromTDistanciaLarga TIME NOT NULL,
+MejorTiempoDistanciaLarga TIME NOT NULL,
+MejorTiempoDistanciaCorta TIME NOT NULL,
+PromedioSalto INT NOT NULL,
+MejorSalto INT NOT NULL,
+PruebaPace TIME NOT NULL,
+PruebaHR TIME NOT NULL,
+NotaXSport INT NOT NULL
 )
 
 CREATE TABLE EstadisticasPartidoAtleta(
 Carne VARCHAR (20),
-NumPartidos INT,
-PromedioCalifPartidos INT,
-TotalJuegos INT,
-TotalJuegosGanados INT,
-TotalJuegosPerdidos INT,
-TotalJuegosEmpatados INT,
-TotalGoles INT,
-TotalAsistencias INT,
-TotalBalonesRecuperados INT,
-BalonesRecupPorPartido INT,
-TotalPases INT,
-PorcentPasesExitosos INT,
-TotalCentros INT,
-PorcentCentrosExitosos INT,
-TarjetasAmarillas INT,
-TarjetasRojas INT,
-PenalesDetenidos INT,
-PenalesSalvados INT,
-PorcentRematesSalvados INT,
+NumPartidos INT NOT NULL,
+PromedioCalifPartidos INT NOT NULL,
+TotalJuegos INT NOT NULL,
+TotalJuegosGanados INT NOT NULL,
+TotalJuegosPerdidos INT NOT NULL,
+TotalJuegosEmpatados INT NOT NULL,
+TotalGoles INT NOT NULL,
+TotalAsistencias INT NOT NULL,
+TotalBalonesRecuperados INT NOT NULL,
+BalonesRecupPorPartido INT NOT NULL,
+TotalPases INT NOT NULL,
+PorcentPasesExitosos INT NOT NULL,
+TotalCentros INT NOT NULL,
+PorcentCentrosExitosos INT NOT NULL,
+TarjetasAmarillas INT NOT NULL,
+TarjetasRojas INT NOT NULL,
+PenalesDetenidos INT NOT NULL,
+PenalesSalvados INT NOT NULL,
+PorcentRematesSalvados INT NOT NULL,
 )
 
 CREATE TABLE TiposDeUsuario (
