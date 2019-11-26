@@ -3,6 +3,10 @@ import PersonalInfo from './personalInfo';
 import AccountInfo from './accountInfo';
 import SportInfo from './sportInfo';
 
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
+import AdminLayout from "layouts/Admin.jsx";
+
 export class UserForm extends Component {
     state = {
         step: 1,
@@ -100,7 +104,12 @@ export class UserForm extends Component {
             />);
         if(step === 4)
         return (
-            <h1>Completado</h1>
+            <BrowserRouter>
+                <Switch>
+                <Route path="/admin" render={props => <AdminLayout {...props} />} />
+                <Redirect from="/" to="/admin/dashboard" />
+                </Switch>
+            </BrowserRouter>
         );
     }
 

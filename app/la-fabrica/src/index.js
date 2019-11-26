@@ -1,24 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import * as serviceWorker from './serviceWorker';
+/*!
 
-import LogInComponent from './components/login/login';
-import SignInComponent from './components/signin/userForm';
+=========================================================
+* Light Bootstrap Dashboard React - v1.3.0
+=========================================================
 
-class App extends React.Component {
-    render() {
-      return (
-        <div>
-          <SignInComponent />
-        </div>
-      );
-    }
-  }
+* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+* Coded by Creative Tim
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+import React from "react";
+import ReactDOM from "react-dom";
+
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/animate.min.css";
+import "./assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
+import "./assets/css/demo.css";
+import "./assets/css/pe-icon-7-stroke.css";
+
+import AdminLayout from "layouts/Admin.jsx";
+import SignInComponent from './components/SignIn/userForm';
+
+ReactDOM.render(
+  <BrowserRouter>
+    <Switch>
+      <Route path="/signin" render={props => <SignInComponent {...props} />} />
+      <Redirect from="/" to="/signin/dashboard" />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
