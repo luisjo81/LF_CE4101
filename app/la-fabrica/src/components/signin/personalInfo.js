@@ -24,7 +24,7 @@ export class PersonalInfo extends Component {
                     />
                     <label>
                         Primer apellido 
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         Segundo apellido
                     </label>
                     <input 
@@ -41,7 +41,7 @@ export class PersonalInfo extends Component {
                     />
                     <label>
                         Género 
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
                         Fecha de nacimiento
                     </label>
                     <select name="gender" onChange={handleChange('gender')}>
@@ -56,7 +56,7 @@ export class PersonalInfo extends Component {
                     />
                     <label>
                         Altura (cm) 
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         Peso (Kg)
                     </label>
                     <input 
@@ -79,7 +79,7 @@ export class PersonalInfo extends Component {
                     />
                     <label>
                         País
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;           
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;            
                         Ciudad
                     </label>
                     <select name="country" onChange={handleChange('country')}>

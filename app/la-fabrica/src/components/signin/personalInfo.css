@@ -29,7 +29,7 @@
 	color: #FFFFFF;
 	font-size: 20px;
 	font-weight: 100;
-	width: 520px;
+	width: 500px;
 	padding: 20px;
 	margin: -30px -30px 30px -30px;
 	border-radius: 12px;
@@ -84,7 +84,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	outline: none;
-	display: block;
+	display: table-row;
 	width: 45%;
 	padding: 7px;
 	border: none;

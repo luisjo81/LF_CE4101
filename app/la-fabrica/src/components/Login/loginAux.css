@@ -1,4 +1,4 @@
-.sport-info-page{
+.login-aux-page{
 	background: #B6DCAE;
 	height: 100vh;
 	width: 100%;
@@ -8,7 +8,7 @@
 	align-items: center;
 }
 
-.sport-info-page form{
+.login-aux-page form{
 	font-family: 'Open Sans Condensed', arial, sans;
 	width: 500px;
 	padding: 30px;
@@ -22,20 +22,20 @@
 	border-radius: 12px;
 }
 
-.sport-info-page h1{
+.login-aux-page h1{
 	background: #00473E;
 	text-transform: uppercase;
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #FFFFFF;
 	font-size: 20px;
 	font-weight: 100;
-	width: 520px;
+	width: 500px;
 	padding: 20px;
 	margin: -30px -30px 30px -30px;
 	border-radius: 12px;
 }
 
-.sport-info-page h2{
+.login-aux-page h2{
 	background: #8CB1AC;
 	text-transform: uppercase;
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -46,7 +46,7 @@
 	margin: -30px -30px 5px -30px;
 }
 
-.sport-info-page label{
+.login-aux-page label{
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #000000;
 	outline: none;
@@ -61,7 +61,7 @@
 	height: 1px;	
 }
 
-.sport-info-page input{
+.login-aux-page input{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -79,7 +79,7 @@
 	height: 35px;
 }
 
-.sport-info-page select{
+.login-aux-page select{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -97,7 +97,7 @@
 	border-radius: 12px;
 }
 
-.sport-info-page button{
+.login-aux-page button{
 	background-color: #00473E; /* Green */
 	border: none;
 	color: white;
@@ -106,8 +106,9 @@
 	text-decoration: none;
 	display: inline;
 	font-size: 16px;
-	margin: 4px 0px 4px 80px;
+	margin: 4px 0px 4px 300px;
+	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 	cursor: pointer;
-    border-radius: 12px;
+	border-radius: 12px;
 }

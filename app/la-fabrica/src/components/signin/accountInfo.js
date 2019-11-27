@@ -35,9 +35,9 @@ export class AccountInfo extends Component {
                     <h1>Paso 3 de 3</h1>
                     <h2>Información de la cuenta</h2>
                     <label> 
-                        Correo electrónico (principal) 
-                        &emsp;&emsp;
-                        Correo electrónico (secundario)
+                        Correo (principal) 
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+                        Correo (secundario)
                     </label>
                     <input 
                         type="email"
@@ -53,7 +53,7 @@ export class AccountInfo extends Component {
                     />
                     <label> 
                         Número telefónico 
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;
                         Contraseña
                     </label>
                     <input 
