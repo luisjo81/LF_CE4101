@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PersonalInfo from './personalInfo';
 import AccountInfo from './accountInfo';
 import SportInfo from './sportInfo';
+import Success from './success';
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
@@ -104,12 +105,7 @@ export class UserForm extends Component {
             />);
         if(step === 4)
         return (
-            <BrowserRouter>
-                <Switch>
-                <Route path="/admin" render={props => <AdminLayout {...props} />} />
-                <Redirect from="/" to="/admin/dashboard" />
-                </Switch>
-            </BrowserRouter>
+            <Success/>
         );
     }
 

@@ -1,19 +1,45 @@
 import React, { Component } from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 
 export class Success extends Component {
     
+    constructor(props){
+        super(props);
+        this.state = {
+            items: [], 
+            isLoaded: false
+        }
+    }
+
+    componentDidMount() {
+        fetch('https://lafabricarestapi.azurewebsites.net/getinfoatleta/pesquive@gmail.com/')
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({
+                isLoaded: true,
+                items: data
+            })
+        })
+        .catch(console.log);
+    }
     
     render() {
-        return (
-            <MuiThemeProvider>
-                <React.Fragment>
-                    <AppBar title = "Success" />
-                    <h1>Thank you</h1>
-                </React.Fragment>
-            </MuiThemeProvider>
-        )
+
+        var { isLoaded, items} = this.state;
+
+        if (!isLoaded) {
+            return (<div>Loading...</div>);
+        }
+
+        else{
+            console.log(items);
+            return (
+                <div>
+                    <h1>Conexión completada</h1>
+                </div>
+                );
+        }
+
+        
     }
 }
 
